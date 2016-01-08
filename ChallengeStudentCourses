@@ -1,0 +1,39 @@
+Dictionary students = new Dictionary()
+            {
+                
+
+                {4, new Student{StudentId = 4, Name = "Bob", Courses = new List()
+                    {
+                        new Course{
+                            CourseId = 1,Name = "Algebra", Grade = 98
+                        },
+                        new Course{
+                            CourseId = 2,Name = "Maths", Grade =89
+                        }
+                    }}},                      
+                {5, new Student{StudentId = 5, Name = "Susan", Courses = new List(){
+                        new Course{
+                            CourseId = 2,Name="Maths", Grade = 89
+                        },
+                        new Course{
+                            CourseId = 3,Name="Calculus", Grade =84
+                        }
+                    }}},      
+                {6, new Student{StudentId = 6, Name ="Jack", Courses = new List(){
+                        new Course{
+                            CourseId = 3, Name= "Calculus",Grade = 84
+                        },
+                        new Course{
+                            CourseId = 1, Name= "Algebra", Grade =68
+                        }
+                    }}},      
+            };
+
+            foreach (var student in students)
+            {
+                resultLabel.Text += string.Format("Student: {0}-{1}", student.Value.StudentId, student.Value.Name);
+                foreach (var course in student.Value.Courses)
+                {
+                    resultLabel.Text += string.Format("&nbsp;&nbsp;Course:{0}-{1}-Grade:{2}", course.CourseId, course.Name, course.Grade);
+                }
+            }
